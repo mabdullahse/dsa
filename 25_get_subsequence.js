@@ -16,3 +16,23 @@
 // Output : 8
 // Explanation:  sub-sequence are : '___' '__c' '_b_' '_bc' 'a__' 'a_c' 'ab_' 'abc'
 // For total length of string: ( 2^(n-1) . n )
+
+function getss(str) {
+  if (str.length === 0) {
+    return [""];
+  }
+  const firstLetter = str.charAt(0);
+  const remString = str.substring(1);
+
+  const suppose = getss(remString);
+
+  let ans = [];
+
+  for (let i = 0; i < suppose.length; i++) {
+    ans.push(firstLetter + suppose[i]);
+    ans.push("_" + suppose[i]);
+  }
+
+  return ans;
+}
+console.log(getss("abc"));
