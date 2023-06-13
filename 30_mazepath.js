@@ -12,4 +12,4 @@ function getMazePaths(sr, sc, dr, dc) {
   return path;
 }
 
-console.log(getMazePaths(1, 1, 3, 3));
+console.log(getMazePaths(1, 1, 4, 4));

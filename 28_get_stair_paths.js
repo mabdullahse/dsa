@@ -18,7 +18,7 @@ function getStairPaths(stair) {
   for (let i = 0; i < path3.length; i++) {
     paths.push(path3[i] + "3");
   }
-  console.log(paths);
+
   return paths;
 }
 

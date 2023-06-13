@@ -1,0 +1,4 @@
+There are types of recursion
+
+1. Faith & expectation
+2. Level up  | Solution is solved while moving up
