@@ -33,3 +33,35 @@ function getPaths(sr, sc, dr, dc) {
 }
 
 console.log(getPaths(1, 1, 4, 4));
+
+// Anothe way
+
+// function getMazePathWithjump(sr, sc, dr, dc) {
+//   if (sr === dr && sc === dc) {
+//     return [""];
+//   }
+//   if (sr > dr || sc > dc) {
+//     return [];
+//   }
+
+//   var pathv = getMazePathWithjump(sr + 1, sc, dr, dc);
+//   var pathh = getMazePathWithjump(sr, sc + 1, dr, dc);
+//   var pathd = getMazePathWithjump(sr + 1, sc + 1, dr, dc);
+
+//   var paths = [];
+
+//   for (let i = 0; i < pathv.length; i++) {
+//     paths.push("v" + pathv[i]);
+//   }
+
+//   for (let i = 0; i < pathh.length; i++) {
+//     paths.push("h" + pathh[i]);
+//   }
+
+//   for (let i = 0; i < pathd.length; i++) {
+//     paths.push("d" + pathd[i]);
+//   }
+//   return paths;
+// }
+
+// console.log(getMazePathWithjump(1, 1, 3, 3));
