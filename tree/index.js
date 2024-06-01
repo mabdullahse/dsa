@@ -53,6 +53,7 @@ class BSTree {
     return false;
   }
 
+  // Tree Includes
   searchTree(root, val) {
     if (!root) return false;
     if (root.value === val) return true;
@@ -61,6 +62,12 @@ class BSTree {
     } else {
       return this.searchTree(root.right, val);
     }
+  }
+  // V2: Searching the node
+  seachTreeV2(root, target) {
+    if (!root) return false;
+    if (root.value === target) return true;
+    return seachTreeV2(root.left, target) || seachTreeV2(root.right, target);
   }
 
   preOrderTree(root) {
@@ -85,6 +92,15 @@ class BSTree {
     }
   }
 
+  // Breath First Search
+  //    A
+  //   / \
+  //  B   C
+  // / \   \
+  // D   E   F
+
+  // => A B C D E F
+
   bfsTraversing() {
     let queue = [];
     queue.push(this.root);
@@ -98,6 +114,39 @@ class BSTree {
       }
       console.warn(current.value);
     }
+  }
+
+  // Depth First Search
+  //    A
+  //   / \
+  //  B   C
+  // / \   \
+  // D   E   F
+
+  // => A B D E C F
+  depthFirstValues() {
+    let stack = [this.root];
+
+    while (stack.length > 0) {
+      const current = stack.pop();
+      console.log(current.value);
+
+      if (current.right) {
+        stack.push(current.right);
+      }
+
+      if (current.left) {
+        stack.push(current.left);
+      }
+    }
+  }
+
+  // sum all the tree
+
+  treeSum(root) {
+    if (!root) return 0;
+
+    return root.value + treeSum(root.left) + treeSum(root.left);
   }
 
   minValue(root) {
